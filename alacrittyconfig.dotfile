@@ -1,0 +1,214 @@
+##start_alacritty
+
+#                               _..._                                               
+#           .---.             .-'_..._''.                                            
+#           |   |           .' .'      '.\        .--.                               
+#           |   |          / .'                   |__|               .-.          .- 
+#           |   |         . '             .-,.--. .--.     .|       .|\ \        / / 
+#     __    |   |    __   | |             |  .-. ||  |   .' |_    .' |_\ \      / /  
+#  .:--.'.  |   | .:--.'. | |             | |  | ||  | .'     | .'     |\ \    / /   
+# / |   \ | |   |/ |   \ |. '             | |  | ||  |'--.  .-''--.  .-' \ \  / /    
+# `" __ | | |   |`" __ | | \ '.          .| |  '- |  |   |  |     |  |    \ `  /     
+#  .'.''| | |   | .'.''| |  '. `._____.-'/| |     |__|   |  |     |  |     \  /      
+# / /   | |_'---'/ /   | |_   `-.______ / | |            |  '.'   |  '.'   / /       
+# \ \._,\ '/     \ \._,\ '/            `  |_|            |   /    |   /|`-' /        
+#  `--'  `"       `--'  `"                               `'-'     `'-'  '..'         
+#
+#
+
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 0
+    y: 0
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: Hack
+    style: Regular
+
+  bold:
+    family: Hack
+    style: Bold
+
+  italic:
+    family: Hack
+    style: Italic
+
+  bold_italic:
+    family: Hack
+    style: Bold Italic
+
+  size: 6.0
+
+  offset:
+    x: 0
+    y: 3
+
+# Colors 000 (David Cincotta)
+colors:
+  primary:
+    background:	'#500062' # background color		# dark purple		favorite color
+    foreground:	'#afff9d' # primary text color		# light green		orthagonal to dark purple
+  cursor:
+    cursor:	'#ffffff' # color of cursor		# white			for visibility in all background options
+    text:	'#000000' # color of text in cursor	# black			orthagonal to white
+  normal:
+    black:	'#000000'
+    red:	'#00ffff' # important text, regex	# swapped  with cyan	I like regex matching to be bright 
+    green:	'#00ff00'
+    yellow:	'#0000ff' # ?				# swapped with blue
+    blue:	'#ffff00' # color of directories 	# swapped with yellow	needs to be bright and noticable swap with yellow
+    magenta:	'#ff00ff'
+    cyan:	'#ff0000' # shows soft links		# swapped with red
+    white:	'#ffffff'
+
+
+# Colors 001 (David Cincotta)
+#colors:
+#  primary:
+#    background:	'#ffffff' # background color		# dark purple		favorite color
+#    foreground:	'#000000' # primary text color		# light green		orthagonal to dark purple
+#  cursor:
+#    cursor:	'#ffffff' # color of cursor		# white			for visibility in all background options
+#    text:	'#000000' # color of text in cursor	# black			orthagonal to white
+#  normal:
+#    black:	'#000000'
+#    red:	'#ff0000' # important text, regex	# swapped  with cyan	I like regex matching to be bright 
+#    green:	'#00ff00'
+#    yellow:	'#ffff00' # ?				# swapped with blue
+#    blue:	'#0000ff' # color of directories 	# swapped with yellow	needs to be bright and noticable swap with yellow
+#    magenta:	'#ff00ff'
+#    cyan:	'#00ffff' # shows soft links		# swapped with red
+#    white:	'#000000'
+
+# Colors 1 (Jellybeans)
+#colors:
+#  bright:
+#    black: '#666666'   # 8
+#    red: '#ffa1a1'     # 9
+#    green: '#bddeab'   # 10
+#    yellow: '#ffdca0'  # 11
+#    blue: '#b1d8f6'    # 12
+#    magenta: '#FF7CB4' # 13
+#    cyan: '#1ab2a8'    # 14
+#    white: '#ffffff'   # 15
+#  cursor:
+#    cursor: '#ffa560'
+#    text: '#ffffff'
+#  normal:
+#    black: '#121212'   # 0
+#    red: '#e27373'     # 1
+#    green: '#94b979'   # 2
+#    yellow: '#ffba7b'  # 3
+#    blue: '#97bedc'    # 4
+#    magenta: '#fc5fa2' # 5
+#    cyan: '#00837B'    # 6
+#    white: '#dedede'   # 7
+#  primary:
+#    background: '#121212' #light gray
+#    foreground: '#dedede' #dark gray
+# # END
+
+# # Colors 2 (Gruvbox Dark)
+# colors:
+#   bright:
+#     black: '#7f7061'
+#     blue: '#719586'
+#     cyan: '#7db669'
+#     green: '#aab01e'
+#     magenta: '#c77089'
+#     red: '#f73028'
+#     white: '#e6d4a3'
+#     yellow: '#f7b125'
+#   cursor:
+#     cursor: '#e6d4a3'
+#     text: '#1e1e1e'
+#   normal:
+#     black: '#1e1e1e'
+#     blue: '#377375'
+#     cyan: '#578e57'
+#     green: '#868715'
+#     magenta: '#a04b73'
+#     red: '#be0f17'
+#     white: '#978771'
+#     yellow: '#cc881a'
+#   primary:
+#     background: '#1e1e1e'
+#     foreground: '#e6d4a3'
+#   selection:
+#     background: '#e6d4a3'
+#     text: '#534a42'
+# # END
+
+# # Colors 3 (Credit: exelotl)
+# colors:
+#   bright:
+#     black: '#6c7985'
+#     blue: '#5cd7fe'
+#     cyan: '#4EC9B0'
+#     green: '#91D462'
+#     magenta: '#fc5fa2'
+#     red: '#fc8e3e'
+#     white: '#ffffff'
+#     yellow: '#f7b125'
+#   cursor:
+#     cursor: '#f64949'
+#     text: '#1e1f24'
+#   normal:
+#     black: '#121212'
+#     blue: '#49A4C2'
+#     cyan: '#5CCDB7'
+#     green: '#91D462'
+#     magenta: '#A90D91'
+#     red: '#f64949'
+#     white: '#978771'
+#     yellow: '#cc881a'
+#   primary:
+#     background: '#121212'
+#     foreground: '#ffffff'
+#   selection:
+#     background: '#f64949'
+#     text: '#534a42'
+# # END
+
+    background_opacity: 1.0
+
+key_bindings:
+  # { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: V,        mods: Control,       action: Paste            }
+  # { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: C,        mods: Control,       action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Add,      mods: Control,       action: IncreaseFontSize }
+  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+
+  - { key: Paste,                    action: Paste                            }
+  - { key: Copy,                     action: Copy                             }
+  - { key: L,         mods: Control, action: ClearLogNotice                   }
+  - { key: L,         mods: Control, chars: "\x0c"                            }
+  - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+  - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+  - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
+  - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+
+##end_alacritty
