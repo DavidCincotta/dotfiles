@@ -1,7 +1,13 @@
+#   _       _________          _______  _______                                              
+#  ( (    /|\__   __/|\     /|(  ___  )(  ____ \                                             
+#  |  \  ( |   ) (   ( \   / )| (   ) || (    \/                                             
+#  |   \ | |   | |    \ (_) / | |   | || (_____                                              
+#  | (\ \) |   | |     ) _ (  | |   | |(_____  )                                             
+#  | | \   |   | |    / ( ) \ | |   | |      ) |                                             
+#  | )  \  |___) (___( /   \ )| (___) |/\____) |                                             
+#  |/    )_)\_______/|/     \|(_______)\_______)  
 
-
-
-
+# main config file
 { config, lib, pkgs, ... }:
 {
   imports =
@@ -50,8 +56,29 @@
   nixpkgs.config.allowUnfree = true;
   programs = {
     fish = {
+      
+      # alias se="sudo vim -n -u /etc/nixos/vimconfig.dotfile";
       enable = true;
-      #shellAliases = [e];
+      interactiveShellInit = ''
+        alias gs="git status";
+        alias e="vim -n";
+        alias s="sudo";
+        alias se="sudo vim -n";
+        alias l="ls -ahl";
+        alias g="grep -P";
+	alias h="history --show-time="(%Y-%m-%d) - %H:%M.%S    "";
+        alias ontouchpad="xinput enable 11";
+	alias offtouchpad="xinput disable 11";
+        alias rebuild="sudo nixos-rebuild switch";
+        alias ctrlc="xclip -selection c";
+        alias ctrlv="xclip -selection c -o";
+	alias p="ps -A";
+	alias gpom="git push -u origin master";
+	alias gs="git status";
+	alias f="fish";
+        alias sf="sudo fish";
+        alias lynx="lynx -cfg=/etc/nixos/lynx.cfg";
+      '';
     };
   };
   services.openssh = {

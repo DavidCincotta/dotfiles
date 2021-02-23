@@ -1,10 +1,12 @@
-#  d8b   db d888888b db    db  .d88b.  .d8888. 
-#  888o  88   `88'   `8b  d8' .8P  Y8. 88'  YP 
-#  88V8o 88    88     `8bd8'  88    88 `8bo.   
-#  88 V8o88    88     .dPYb.  88    88   `Y8b. 
-#  88  V888   .88.   .8P  Y8. `8b  d8' db   8D 
-#  VP   V8P Y888888P YP    YP  `Y88P'  `8888Y' 
-
+# _       _________          _______  _______                                              
+#( (    /|\__   __/|\     /|(  ___  )(  ____ \                                             
+#|  \  ( |   ) (   ( \   / )| (   ) || (    \/                                             
+#|   \ | |   | |    \ (_) / | |   | || (_____                                              
+#| (\ \) |   | |     ) _ (  | |   | |(_____  )                                             
+#| | \   |   | |    / ( ) \ | |   | |      ) |                                             
+#| )  \  |___) (___( /   \ )| (___) |/\____) |                                             
+#|/    )_)\_______/|/     \|(_______)\_______)  
+#
 # core GUI environment; strictly non-machine-specific things that do not work from a TTY.
 { config, lib, pkgs, ... }:
 let
@@ -33,9 +35,8 @@ in {
       pkgs.virt-manager
       pkgs.xorg.xmodmap
       pkgs.xorg.xset
-      #pkgs.ranger
+      pkgs.ranger
       #pkgs.vscode
-      #pkgs.jetbrains.phpstorm
       pkgs.google-chrome
       #pkgs.chromium
       #pkgs.jetbrains.phpstorm
@@ -47,16 +48,14 @@ in {
       pkgs.i3
       pkgs.i3-gaps
       pkgs.unclutter-xfixes
-      pkgs.discord
       pkgs.libreoffice
       pkgs.gnumeric
+      #pkgs.wineStable
     ];
     etc."alacritty".text = builtins.readFile dotfiles.alacritty_config;
     sessionVariables.TERMINAL = ["alacritty"];
     sessionVariables.TERM = ["alacritty"];
     sessionVariables.EDITOR = ["vim"];
-    sessionVariables.COLOR_SCHEME = ["000"];
-    sessionVariable.WALLPAPER_PATH =["/home/david/Pictures/vaporwave.jpg"]
   };
   fonts.fonts = [
     pkgs.hack-font

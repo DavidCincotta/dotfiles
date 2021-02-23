@@ -1,20 +1,11 @@
-##start_alacritty
-
-#                               _..._                                               
-#           .---.             .-'_..._''.                                            
-#           |   |           .' .'      '.\        .--.                               
-#           |   |          / .'                   |__|               .-.          .- 
-#           |   |         . '             .-,.--. .--.     .|       .|\ \        / / 
-#     __    |   |    __   | |             |  .-. ||  |   .' |_    .' |_\ \      / /  
-#  .:--.'.  |   | .:--.'. | |             | |  | ||  | .'     | .'     |\ \    / /   
-# / |   \ | |   |/ |   \ |. '             | |  | ||  |'--.  .-''--.  .-' \ \  / /    
-# `" __ | | |   |`" __ | | \ '.          .| |  '- |  |   |  |     |  |    \ `  /     
-#  .'.''| | |   | .'.''| |  '. `._____.-'/| |     |__|   |  |     |  |     \  /      
-# / /   | |_'---'/ /   | |_   `-.______ / | |            |  '.'   |  '.'   / /       
-# \ \._,\ '/     \ \._,\ '/            `  |_|            |   /    |   /|`-' /        
-#  `--'  `"       `--'  `"                               `'-'     `'-'  '..'         
-#
-#
+#   _______  _        _        _______  _______  _______ ___________________________         
+#  (  ___  )( \      ( \      (  ___  )(  ____ \(  ____ )\__   __/\__   __/\__   __/|\     /|
+#  | (   ) || (      | (      | (   ) || (    \/| (    )|   ) (      ) (      ) (   ( \   / )
+#  | (___) || |      | |      | (___) || |      | (____)|   | |      | |      | |    \ (_) / 
+#  |  ___  || |      | |      |  ___  || |      |     __)   | |      | |      | |     \   /  
+#  | (   ) || |      | |      | (   ) || |      | (\ (      | |      | |      | |      ) (   
+#  | )   ( || (____/\| (____/\| )   ( || (____/\| ) \ \_____) (___   | |      | |      | |   
+#  |/     \|(_______/(_______/|/     \|(_______/|/   \__/\_______/   )_(      )_(      \_/   
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 env:
@@ -59,134 +50,1182 @@ font:
 
   offset:
     x: 0
-    y: 3
+    y: 0
 
-# Colors 000 (David Cincotta)
+
+
+
+#STARTCOLORS
+# Colors 00 (David Cincotta)
+# colors:
+#   primary:
+#     background:	'#500062' # background color		# dark purple		favorite color
+#     foreground:	'#afff9d' # primary text color		# light green		orthagonal to dark purple
+#   cursor:
+#     cursor:	'#ffffff' # color of cursor		# white			for visibility in all background options
+#     text:	'#000000' # color of text in cursor	# black			orthagonal to white
+#   normal:
+#     black:	'#000000'
+#     red:	'#00ffff' # important text, regex	# swapped  with cyan	I like regex matching to be bright 
+#     green:	'#00ff00'
+#     yellow:	'#0000ff' # ?				# swapped with blue
+#     blue:	'#ffff00' # color of directories 	# swapped with yellow	needs to be bright and noticable swap with yellow
+#     magenta:	'#ff00ff'
+#     cyan:	'#ff0000' # shows soft links		# swapped with red
+#     white:	'#ffffff'
+# 01
+# colors:
+#   primary:
+#     background: '0x2c2c2c'
+#     foreground: '0xd6d6d6'
+#     dim_foreground:    '0xdbdbdb'
+#     bright_foreground: '0xd9d9d9'
+#     dim_background:    '0x202020' # not sure
+#     bright_background: '0x3a3a3a' # not sure
+#   cursor:
+#     text:   '0x2c2c2c'
+#     cursor: '0xd9d9d9'
+#   normal:
+#     black:   '0x1c1c1c'
+#     green:   '0x909d63'
+#     yellow:  '0xebc17a'
+#     blue:    '0x7eaac7'
+#     magenta: '0xaa6292'
+#     cyan:    '0x86d3ce'
+#     white:   '0xcacaca'
+#   bright:
+#     black:   '0x636363'
+#     green:   '0x909d63'
+#     yellow:  '0xebc17a'
+#     blue:    '0x7eaac7'
+#     magenta: '0xaa6292'
+#     cyan:    '0x86d3ce'
+#     white:   '0xf7f7f7'
+#     black:   '0x232323'
+#     green:   '0x5e6547'
+#     yellow:  '0x8b7653'
+#     blue:    '0x556b79'
+#     magenta: '0x6e4962'
+#     cyan:    '0x5c8482'
+#     white:   '0x828282'
+# 02
+# colors:
+#   primary:
+#     background: '0x292C3E'
+#     foreground: '0xEBEBEB'
+#   cursor:
+#     text: '0xFF261E'
+#     cursor: '0xFF261E'
+#   normal:
+#     black:   '0x0d0d0d'
+#     green:   '0xA0E521'
+#     yellow:  '0xFFC620'
+#     blue:    '0x1BA6FA'
+#     magenta: '0x8763B8'
+#     cyan:    '0x21DEEF'
+#     white:   '0xEBEBEB'
+#   bright:
+#     black:   '0x6D7070'
+#     green:   '0xB8E466'
+#     yellow:  '0xFFD750'
+#     blue:    '0x1BA6FA'
+#     magenta: '0xA578EA'
+#     cyan:    '0x73FBF1'
+#     white:   '0xFEFEF8'
+# 03 (Ayu Dark)
+# colors:
+#   primary:
+#     background: '0x0A0E14'
+#     foreground: '0xB3B1AD'
+#   normal:
+#     black:   '0x01060E'
+#     green:   '0x91B362'
+#     yellow:  '0xF9AF4F'
+#     blue:    '0x53BDFA'
+#     magenta: '0xFAE994'
+#     cyan:    '0x90E1C6'
+#     white:   '0xC7C7C7'
+#   bright:
+#     black:   '0x686868'
+#     green:   '0xC2D94C'
+#     yellow:  '0xFFB454'
+#     blue:    '0x59C2FF'
+#     magenta: '0xFFEE99'
+#     cyan:    '0x95E6CB'
+#     white:   '0xFFFFFF'
+# 04 (Base16 Default Dark)
+# colors:
+#   primary:
+#     background: '0x181818'
+#     foreground: '0xd8d8d8'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0xd8d8d8'
+#     cursor: '0xd8d8d8'
+#   normal:
+#     black:   '0x181818'
+#     green:   '0xa1b56c'
+#     yellow:  '0xf7ca88'
+#     blue:    '0x7cafc2'
+#     magenta: '0xba8baf'
+#     cyan:    '0x86c1b9'
+#     white:   '0xd8d8d8'
+#   bright:
+#     black:   '0x585858'
+#     green:   '0xa1b56c'
+#     yellow:  '0xf7ca88'
+#     blue:    '0x7cafc2'
+#     magenta: '0xba8baf'
+#     cyan:    '0x86c1b9'
+#     white:   '0xf8f8f8'
+# 05 (Blood Moon)
+# colors:
+#   primary:
+#     background: '0x10100E'
+#     foreground: '0xC6C6C4'
+#   normal:
+#     black:   '0x10100E'
+#     green:   '0x009F6B'
+#     yellow:  '0xFFD700'
+#     blue:    '0x0087BD'
+#     magenta: '0x9A4EAE'
+#     cyan:    '0x20B2AA'
+#     white:   '0xC6C6C4'
+#   bright:
+#     black:   '0x696969'
+#     green:   '0x03C03C'
+#     yellow:  '0xFDFF00'
+#     blue:    '0x007FFF'
+#     magenta: '0xFF1493'
+#     cyan:    '0x00CCCC'
+#     white:   '0xFFFAFA'
+# 06
+# colors:
+#   primary:
+#     background: '0x232627'
+#     foreground: '0xfcfcfc'
+#     dim_foreground: '0xeff0f1'
+#     bright_foreground: '0xffffff'
+#     dim_background: '0x31363b'
+#     bright_background: '0x000000'
+#   normal:
+#     black: '0x232627'
+#     green: '0x11d116'
+#     yellow: '0xf67400'
+#     blue: '0x1d99f3'
+#     magenta: '0x9b59b6'
+#     cyan: '0x1abc9c'
+#     white: '0xfcfcfc'
+#   bright:
+#     black: '0x7f8c8d'
+#     green: '0x1cdc9a'
+#     yellow: '0xfdbc4b'
+#     blue: '0x3daee9'
+#     magenta: '0x8e44ad'
+#     cyan: '0x16a085'
+#     white: '0xffffff'
+#     black: '0x31363b'
+#     green: '0x17a262'
+#     yellow: '0xb65619'
+#     blue: '0x1b668f'
+#     magenta: '0x614a73'
+#     cyan: '0x186c60'
+#     white: '0x63686d'
+# 07
+# colors:
+#   primary:
+#     background: '0x0c0c0c'
+#     foreground: '0xcccccc'
+#   normal:
+#     black:      '0x0c0c0c'
+#     green:      '0x13a10e'
+#     yellow:     '0xc19c00'
+#     blue:       '0x0037da'
+#     magenta:    '0x881798'
+#     cyan:       '0x3a96dd'
+#     white:      '0xcccccc'
+#   bright:
+#     black:      '0x767676'
+#     green:      '0x16c60c'
+#     yellow:     '0xf9f1a5'
+#     blue:       '0x3b78ff'
+#     magenta:    '0xb4009e'
+#     cyan:       '0x61d6d6'
+#     white:      '0xf2f2f2'
+# 08 (Challenger Deep)
+# colors:
+#   primary:
+#     background: '0x1e1c31'
+#     foreground: '0xcbe1e7'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0xff271d'
+#     cursor: '0xfbfcfc'
+#   normal:
+#     black:   '0x141228'
+#     green:   '0x62d196'
+#     yellow:  '0xffb378'
+#     blue:    '0x65b2ff'
+#     magenta: '0x906cff'
+#     cyan:    '0x63f2f1'
+#     white:   '0xa6b3cc'
+#   bright:
+#     black:   '0x565575'
+#     green:   '0x95ffa4'
+#     yellow:  '0xffe9aa'
+#     blue:    '0x91ddff'
+#     magenta: '0xc991e1'
+#     cyan:    '0xaaffe4'
+#     white:   '0xcbe3e7'
+# 09
+# colors:
+#   primary:
+#     background: '0x122637'
+#     foreground: '0xffffff'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0x122637'
+#     cursor: '0xf0cb09'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x37dd21'
+#     yellow:  '0xfee409'
+#     blue:    '0x1460d2'
+#     magenta: '0xff005d'
+#     cyan:    '0x00bbbb'
+#     white:   '0xbbbbbb'
+#   bright:
+#     black:   '0x545454'
+#     green:   '0x3bcf1d'
+#     yellow:  '0xecc809'
+#     blue:    '0x5555ff'
+#     magenta: '0xff55ff'
+#     cyan:    '0x6ae3f9'
+#     white:   '0xffffff'
+# 10
+# colors:
+#   primary:
+#     background: "0x000b1e"
+#     foreground: "0x0abdc6"
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text:   "0x000b1e"
+#     cursor: "0x0abdc6"
+#   normal:
+#     black:   "0x123e7c"
+#     green:   "0xd300c4"
+#     yellow:  "0xf57800"
+#     blue:    "0x123e7c"
+#     magenta: "0x711c91"
+#     cyan:    "0x0abdc6"
+#     white:   "0xd7d7d5"
+#   bright:
+#     black:   "0x1c61c2"
+#     green:   "0xd300c4"
+#     yellow:  "0xf57800"
+#     blue:    "0x00ff00"
+#     magenta: "0x711c91"
+#     cyan:    "0x0abdc6"
+#     white:   "0xd7d7d5"
+# 11 (Dracula)
+# colors:
+#   primary:
+#     background: '0x282a36'
+#     foreground: '0xf8f8f2'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x50fa7b'
+#     yellow:  '0xf1fa8c'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff79c6'
+#     cyan:    '0x8be9fd'
+#     white:   '0xbfbfbf'
+#   bright:
+#     black:   '0x282a35'
+#     green:   '0x5af78e'
+#     yellow:  '0xf4f99d'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff92d0'
+#     cyan:    '0x9aedfe'
+#     white:   '0xe6e6e6'
+# 12 (Konsole's Dark Pastels)
+# colors:
+#   primary:
+#     background: '0x2C2C2C'
+#     foreground: '0xDCDCCC'
+#   normal:
+#     black:   '0x3F3F3F'
+#     green:   '0x60B48A'
+#     yellow:  '0xDFAF8F'
+#     blue:    '0x9AB8D7'
+#     magenta: '0xDC8CC3'
+#     cyan:    '0x8CD0D3'
+#     white:   '0xDCDCCC'
+#   bright:
+#     black:   '0x709080'
+#     green:   '0x72D5A3'
+#     yellow:  '0xF0DFAF'
+#     blue:    '0x94BFF3'
+#     magenta: '0xEC93D3'
+#     cyan:    '0x93E0E3'
+#     white:   '0xFFFFFF'
+# 13 (Doom One)
+# colors:
+#   primary:
+#     background: '0x282c34'
+#     foreground: '0xbbc2cf'
+#   normal:
+#     black:   '0x282c34'
+#     green:   '0x98be65'
+#     yellow:  '0xecbe7b'
+#     blue:    '0x51afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x46d9ff'
+#     white:   '0xbbc2cf'
+# 14 (Dracula)
+# colors:
+#   primary:
+#     background: '0x282a36'
+#     foreground: '0xf8f8f2'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x50fa7b'
+#     yellow:  '0xf1fa8c'
+#     blue:    '0xbd93f9'
+#     magenta: '0xff79c6'
+#     cyan:    '0x8be9fd'
+#     white:   '0xbbbbbb'
+#   bright:
+#     black:   '0x555555'
+#     green:   '0x50fa7b'
+#     yellow:  '0xf1fa8c'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff79c6'
+#     cyan:    '0x8be9fd'
+#     white:   '0xffffff'
+# 15
+# colors:
+#   primary:
+#     background: '0x020221'
+#     foreground: '0xb4b4b9'
+#   cursor:
+#     text: '0x020221'
+#     cursor: '0xffe8c0'
+#   normal:
+#     black:   '0x000004'
+#     green:   '0x718e3f'
+#     yellow:  '0xffc552'
+#     blue:    '0x635196'
+#     magenta: '0xff761a'
+#     cyan:    '0x34bfa4'
+#     white:   '0xb4b4b9'
+#   bright:
+#     black:   '0x020221'
+#     green:   '0xb1bf75'
+#     yellow:  '0xffd392'
+#     blue:    '0x99a4bc'
+#     magenta: '0xffb07b'
+#     cyan:    '0x8bccbf'
+#     white:   '0xf8f8ff'
+# 16
+# colors:
+#   primary:
+#     background: '0x272a34'
+#     foreground: '0xFFFFFF'
+#   normal:
+#     black:   '0x1F2229'
+#     green:   '0x47D4B9'
+#     yellow:  '0xFF8A18'
+#     blue:    '0x277FFF'
+#     magenta: '0xD71655'
+#     cyan:    '0x05A1F7'
+#     white:   '0xFFFFFF'
+#   bright:
+#     black:   '0x1F2229'
+#     green:   '0x5EBDAB'
+#     yellow:  '0xFEA44C'
+#     blue:    '0x367bf0'
+#     magenta: '0xBF2E5D'
+#     cyan:    '0x49AEE6'
+#     white:   '0xFFFFFF'
+# 17 (Gotham)
+# colors:
+#   primary:
+#     background: '0x0a0f14'
+#     foreground: '0x98d1ce'
+#   normal:
+#     black: '0x0a0f14'
+#     green: '0x26a98b'
+#     yellow: '0xedb54b'
+#     blue: '0x195465'
+#     magenta: '0x4e5165'
+#     cyan: '0x33859d'
+#     white: '0x98d1ce'
+#   bright:
+#     black: '0x10151b'
+#     green: '0x081f2d'
+#     yellow: '0x245361'
+#     blue: '0x093748'
+#     magenta: '0x888ba5'
+#     cyan: '0x599caa'
+#     white: '0xd3ebe9'
+# 18 (Gruvbox dark)
 colors:
   primary:
-    background:	'#500062' # background color		# dark purple		favorite color
-    foreground:	'#afff9d' # primary text color		# light green		orthagonal to dark purple
-  cursor:
-    cursor:	'#ffffff' # color of cursor		# white			for visibility in all background options
-    text:	'#000000' # color of text in cursor	# black			orthagonal to white
+    # hard contrast: background = '0x1d2021'
+    background: '0x282828'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
   normal:
-    black:	'#000000'
-    red:	'#00ffff' # important text, regex	# swapped  with cyan	I like regex matching to be bright 
-    green:	'#00ff00'
-    yellow:	'#0000ff' # ?				# swapped with blue
-    blue:	'#ffff00' # color of directories 	# swapped with yellow	needs to be bright and noticable swap with yellow
-    magenta:	'#ff00ff'
-    cyan:	'#ff0000' # shows soft links		# swapped with red
-    white:	'#ffffff'
-
-
-# Colors 001 (David Cincotta)
-#colors:
-#  primary:
-#    background:	'#ffffff' # background color		# dark purple		favorite color
-#    foreground:	'#000000' # primary text color		# light green		orthagonal to dark purple
-#  cursor:
-#    cursor:	'#ffffff' # color of cursor		# white			for visibility in all background options
-#    text:	'#000000' # color of text in cursor	# black			orthagonal to white
-#  normal:
-#    black:	'#000000'
-#    red:	'#ff0000' # important text, regex	# swapped  with cyan	I like regex matching to be bright 
-#    green:	'#00ff00'
-#    yellow:	'#ffff00' # ?				# swapped with blue
-#    blue:	'#0000ff' # color of directories 	# swapped with yellow	needs to be bright and noticable swap with yellow
-#    magenta:	'#ff00ff'
-#    cyan:	'#00ffff' # shows soft links		# swapped with red
-#    white:	'#000000'
-
-# Colors 1 (Jellybeans)
-#colors:
-#  bright:
-#    black: '#666666'   # 8
-#    red: '#ffa1a1'     # 9
-#    green: '#bddeab'   # 10
-#    yellow: '#ffdca0'  # 11
-#    blue: '#b1d8f6'    # 12
-#    magenta: '#FF7CB4' # 13
-#    cyan: '#1ab2a8'    # 14
-#    white: '#ffffff'   # 15
-#  cursor:
-#    cursor: '#ffa560'
-#    text: '#ffffff'
-#  normal:
-#    black: '#121212'   # 0
-#    red: '#e27373'     # 1
-#    green: '#94b979'   # 2
-#    yellow: '#ffba7b'  # 3
-#    blue: '#97bedc'    # 4
-#    magenta: '#fc5fa2' # 5
-#    cyan: '#00837B'    # 6
-#    white: '#dedede'   # 7
-#  primary:
-#    background: '#121212' #light gray
-#    foreground: '#dedede' #dark gray
-# # END
-
-# # Colors 2 (Gruvbox Dark)
+    red: 	'0x00ffff'
+    black:   '0x282828'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
+  bright:
+    red:	'0x00ffff'
+    black:   '0x928374'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
+# 19 (Gruvbox light)
 # colors:
-#   bright:
-#     black: '#7f7061'
-#     blue: '#719586'
-#     cyan: '#7db669'
-#     green: '#aab01e'
-#     magenta: '#c77089'
-#     red: '#f73028'
-#     white: '#e6d4a3'
-#     yellow: '#f7b125'
-#   cursor:
-#     cursor: '#e6d4a3'
-#     text: '#1e1e1e'
-#   normal:
-#     black: '#1e1e1e'
-#     blue: '#377375'
-#     cyan: '#578e57'
-#     green: '#868715'
-#     magenta: '#a04b73'
-#     red: '#be0f17'
-#     white: '#978771'
-#     yellow: '#cc881a'
 #   primary:
-#     background: '#1e1e1e'
-#     foreground: '#e6d4a3'
-#   selection:
-#     background: '#e6d4a3'
-#     text: '#534a42'
-# # END
-
-# # Colors 3 (Credit: exelotl)
+#     # hard contrast: background = '0xf9f5d7'
+#     background: '0xfbf1c7'
+#     # soft contrast: background = '0xf2e5bc'
+#     foreground: '0x3c3836'
+#   normal:
+#     black:   '0xfbf1c7'
+#     green:   '0x98971a'
+#     yellow:  '0xd79921'
+#     blue:    '0x458588'
+#     magenta: '0xb16286'
+#     cyan:    '0x689d6a'
+#     white:   '0x7c6f64'
+#   bright:
+#     black:   '0x928374'
+#     green:   '0x79740e'
+#     yellow:  '0xb57614'
+#     blue:    '0x076678'
+#     magenta: '0x8f3f71'
+#     cyan:    '0x427b58'
+#     white:   '0x3c3836'
+# 20 (Gruvbox Material Dark Medium)
 # colors:
-#   bright:
-#     black: '#6c7985'
-#     blue: '#5cd7fe'
-#     cyan: '#4EC9B0'
-#     green: '#91D462'
-#     magenta: '#fc5fa2'
-#     red: '#fc8e3e'
-#     white: '#ffffff'
-#     yellow: '#f7b125'
-#   cursor:
-#     cursor: '#f64949'
-#     text: '#1e1f24'
-#   normal:
-#     black: '#121212'
-#     blue: '#49A4C2'
-#     cyan: '#5CCDB7'
-#     green: '#91D462'
-#     magenta: '#A90D91'
-#     red: '#f64949'
-#     white: '#978771'
-#     yellow: '#cc881a'
 #   primary:
-#     background: '#121212'
-#     foreground: '#ffffff'
-#   selection:
-#     background: '#f64949'
-#     text: '#534a42'
-# # END
+#     background: '0x282828'
+#     foreground: '0xdfbf8e'
+#   normal:
+#     black:   '0x665c54'
+#     green:   '0xa9b665'
+#     yellow:  '0xe78a4e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+#   bright:
+#     black:   '0x928374'
+#     green:   '0xa9b665'
+#     yellow:  '0xe3a84e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+# 21 (High Contrast)
+# colors:
+#   primary:
+#     background: '0x444444'
+#     foreground: '0xdddddd'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0xaaaaaa'
+#     cursor: '0xffffff'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x00ff00'
+#     yellow:  '0xffff00'
+#     blue:    '0x0000ff'
+#     magenta: '0xff00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xffffff'
+#   bright:
+#     black:   '0x000000'
+#     green:   '0x00ff00'
+#     yellow:  '0xffff00'
+#     blue:    '0x0000ff'
+#     magenta: '0xff00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xffffff'
+# 22 (Horizon Dark)
+# colors:
+#   primary:
+#     background: '0x1c1e26'
+#     foreground: '0xe0e0e0'
+#   normal:
+#     black: '0x16161c'
+#     green: '0x29d398'
+#     yellow: '0xfab795'
+#     blue: '0x26bbd9'
+#     magenta: '0xee64ac'
+#     cyan: '0x59e1e3'
+#     white: '0xd5d8da'
+#   bright:
+#     black: '0x5b5858'
+#     green: '0x3fdaa4'
+#     yellow: '0xfbc3a7'
+#     blue: '0x3fc4de'
+#     magenta: '0xf075b5'
+#     cyan: '0x6be4e6'
+#     white: '0xd5d8da'
+# 23 (Hyper)
+# colors:
+#   primary:
+#     background: '0x000000'
+#     foreground: '0xffffff'
+#   cursor:
+#     text: '0xF81CE5'
+#     cursor: '0xffffff'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x33ff00'
+#     yellow:  '0xfeff00'
+#     blue:    '0x0066ff'
+#     magenta: '0xcc00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xd0d0d0'
+#   bright:
+#     black:   '0x808080'
+#     green:   '0x33ff00'
+#     yellow:  '0xfeff00'
+#     blue:    '0x0066ff'
+#     magenta: '0xcc00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xFFFFFF'
+# 24 (iTerm 2 default theme)
+# colors:
+#   primary:
+#     background: '0x101421'
+#     foreground: '0xfffbf6'
+#   normal:
+#     black:   '0x2e2e2e'
+#     green:   '0xabe047'
+#     yellow:  '0xf6c744'
+#     blue:    '0x47a0f3'
+#     magenta: '0x7b5cb0'
+#     cyan:    '0x64dbed'
+#     white:   '0xe5e9f0'
+#   bright:
+#     black:   '0x565656'
+#     green:   '0xc0e17d'
+#     yellow:  '0xf9da6a'
+#     blue:    '0x49a4f8'
+#     magenta: '0xa47de9'
+#     cyan:    '0x99faf2'
+#     white:   '0xffffff'
+# 25 (Dim)
+# colors:
+#   primary:
+#     background: '0x333333'
+#     foreground: '0xdddddd'
+#   cursor:
+#     text: '0xaaaaaa'
+#     cursor: '0xffffff'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x00bb00'
+#     yellow:  '0xbbbb00'
+#     blue:    '0x0000bb'
+#     magenta: '0xbb00bb'
+#     cyan:    '0x00bbbb'
+#     white:   '0xbbbbbb'
+#   bright:
+#     black:   '0x000000'
+#     green:   '0x00bb00'
+#     yellow:  '0xbbbb00'
+#     blue:    '0x0000bb'
+#     magenta: '0xbb00bb'
+#     cyan:    '0x00bbbb'
+#     white:   '0xbbbbbb'
+# 26 (Material Theme)
+# colors:
+#   primary:
+#     background: '0x1e282d'
+#     foreground: '0xc4c7d1'
+#   normal:
+#     black:   '0x666666'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x80cbc4'
+#     magenta: '0xff2f90'
+#     cyan:    '0xaeddff'
+#     white:   '0xffffff'
+#   bright:
+#     black:   '0xff262b'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x7dc6bf'
+#     magenta: '0x6c71c4'
+#     cyan:    '0x35434d'
+#     white:   '0xffffff'
+# 27 (Material Theme)
+# colors:
+#   primary:
+#     background: '0x1e282d'
+#     foreground: '0xc4c7d1'
+#   normal:
+#     black:   '0x666666'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x80cbc4'
+#     magenta: '0xff2f90'
+#     cyan:    '0xaeddff'
+#     white:   '0xffffff'
+#   bright:
+#     black:   '0xa1a1a1'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x7dc6bf'
+#     magenta: '0x6c71c4'
+#     cyan:    '0x35434d'
+#     white:   '0xffffff'
+# 28 (Nord)
+# colors:
+#   primary:
+#     background: '0x2E3440'
+#     foreground: '0xD8DEE9'
+#   normal:
+#     black:   '0x3B4252'
+#     green:   '0xA3BE8C'
+#     yellow:  '0xEBCB8B'
+#     blue:    '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan:    '0x88C0D0'
+#     white:   '0xE5E9F0'
+#   bright:
+#     black:   '0x4C566A'
+#     green:   '0xA3BE8C'
+#     yellow:  '0xEBCB8B'
+#     blue:    '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan:    '0x8FBCBB'
+#     white:   '0xECEFF4'
+# 29 (Oceanic Next)
+# colors:
+#   primary:
+#     background: '0x1b2b34'
+#     foreground: '0xd8dee9'
+#   normal:
+#     black:   '0x29414f'
+#     green:   '0x99c794'
+#     yellow:  '0xfac863'
+#     blue:    '0x6699cc'
+#     magenta: '0xc594c5'
+#     cyan:    '0x5fb3b3'
+#     white:   '0x65737e'
+#   bright:
+#     black:   '0x405860'
+#     green:   '0x99c794'
+#     yellow:  '0xfac863'
+#     blue:    '0x6699cc'
+#     magenta: '0xc594c5'
+#     cyan:    '0x5fb3b3'
+#     white:   '0xadb5c0'
+# 30
+# colors:
+#   primary:
+#     background: '0x191622'
+#     foreground: '0xe1e1e6'
+#   cursor:
+#     text: '0x191622'
+#     cursor: '0xf8f8f2'
+#   normal:
+#     black: '0x000000'
+#     green: '0x50fa7b'
+#     yellow: '0xeffa78'
+#     blue: '0xbd93f9'
+#     magenta: '0xff79c6'
+#     cyan: '0x8d79ba'
+#     white: '0xbfbfbf'
+#   bright:
+#     black: '0x4d4d4d'
+#     green: '0x5af78e'
+#     yellow: '0xeaf08d'
+#     blue: '0xcaa9fa'
+#     magenta: '0xff92d0'
+#     cyan: '0xaa91e3'
+#     white: '0xe6e6e6'
+#     black: '0x000000'
+#     green: '0x049f2b'
+#     yellow: '0xa3b106'
+#     blue: '0x530aba'
+#     magenta: '0xbb006b'
+#     cyan: '0x433364'
+#     white: '0x5f5f5f'
+# 31 Colors (One Dark)
+# colors:
+#   primary:
+#     background: '0x1e2127'
+#     foreground: '0xabb2bf'
+#   normal:
+#     black:   '0x1e2127'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xabb2bf'
+#   bright:
+#     black:   '0x5c6370'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xffffff'
+# 32
+# colors:
+#   primary:
+#     background: '0x292d3e'
+#     foreground: '0xd0d0d0'
+#   normal:
+#     black:   '0x292d3e'
+#     green:   '0xc3e88d'
+#     yellow:  '0xffcb6b'
+#     blue:    '0x82aaff'
+#     magenta: '0xc792ea'
+#     cyan:    '0x89ddff'
+#     white:   '0xd0d0d0'
+#   bright:
+#     black:   '0x434758'
+#     green:   '0xddffa7'
+#     yellow:  '0xffe585'
+#     blue:    '0x9cc4ff'
+#     magenta: '0xe1acff'
+#     cyan:    '0xa3f7ff'
+#     white:   '0xffffff'
+# 33 (PaperColor - Light)
+# colors:
+#   primary:
+#     background: '0xeeeeee'
+#     foreground: '0x878787'
+#   cursor:
+#     text: '0xeeeeee'
+#     cursor: '0x878787'
+#   normal:
+#     black:   '0xeeeeee'
+#     green:   '0x008700'
+#     yellow:  '0x5f8700'
+#     blue:    '0x0087af'
+#     magenta: '0x878787'
+#     cyan:    '0x005f87'
+#     white:   '0x444444'
+#   bright:
+#     black:   '0xbcbcbc'
+#     green:   '0xd70087'
+#     yellow:  '0x8700af'
+#     blue:    '0xd75f00'
+#     magenta: '0xd75f00'
+#     cyan:    '0x005faf'
+#     white:   '0x005f87'
+# 34 (Pencil Dark)
+# colors:
+#   primary:
+#     background: '0x212121'
+#     foreground: '0xf1f1f1'
+#   normal:
+#     black:   '0x212121'
+#     green:   '0x10a778'
+#     yellow:  '0xa89c14'
+#     blue:    '0x008ec4'
+#     magenta: '0x523c79'
+#     cyan:    '0x20a5ba'
+#     white:   '0xe0e0e0'
+#   bright:
+#     black:   '0x818181'
+#     green:   '0x5fd7af'
+#     yellow:  '0xf3e430'
+#     blue:    '0x20bbfc'
+#     magenta: '0x6855de'
+#     cyan:    '0x4fb8cc'
+#     white:   '0xf1f1f1'
+# 35 (Pencil Light)
+# colors:
+#   primary:
+#     background: '0xf1f1f1'
+#     foreground: '0x424242'
+#   normal:
+#     black:   '0x212121'
+#     green:   '0x10a778'
+#     yellow:  '0xa89c14'
+#     blue:    '0x008ec4'
+#     magenta: '0x523c79'
+#     cyan:    '0x20a5ba'
+#     white:   '0xe0e0e0'
+#   bright:
+#     black:   '0x212121'
+#     green:   '0x5fd7af'
+#     yellow:  '0xf3e430'
+#     blue:    '0x20bbfc'
+#     magenta: '0x6855de'
+#     cyan:    '0x4fb8cc'
+#     white:   '0xf1f1f1'
+# 36
+# colors:
+#   primary:
+#     background: '0x2c2b2a'
+#     foreground: '0xf9e7c4'
+#     dim_foreground:    '0x685E4A'
+#     bright_foreground: '0x1C1508'
+#     dim_background:    '0x202322'
+#     bright_background: '0x353433'
+#   cursor:
+#     text:   '0xf9e7c4'
+#     cursor: '0xf9e7c4'
+#   normal:
+#     black:   '0x282a2e'
+#     blue:    '0x5f819d'
+#     cyan:    '0x5e8d87'
+#     green:   '0x8c9440'
+#     magenta: '0x85678f'
+#     white:   '0x707880'
+#     yellow:  '0xde935f'
+#   bright:
+#     black:   '0x373b41'
+#     blue:    '0x81a2be'
+#     cyan:    '0x8abeb7'
+#     green:   '0xb5bd68'
+#     magenta: '0xb294bb'
+#     white:   '0xc5c8c6'
+#     yellow:  '0xf0c674'
+# 37 (Snazzy)
+# colors:
+#   primary:
+#     background: '0x282a36'
+#     foreground: '0xeff0eb'
+#   normal:
+#     black:   '0x282a36'
+#     green:   '0x5af78e'
+#     yellow:  '0xf3f99d'
+#     blue:    '0x57c7ff'
+#     magenta: '0xff6ac1'
+#     cyan:    '0x9aedfe'
+#     white:   '0xf1f1f0'
+#   bright:
+#     black:   '0x686868'
+#     green:   '0x5af78e'
+#     yellow:  '0xf3f99d'
+#     blue:    '0x57c7ff'
+#     magenta: '0xff6ac1'
+#     cyan:    '0x9aedfe'
+#     white:   '0xf1f1f0'
+# 38 (Solarized Dark)
+# colors:
+#   primary:
+#     background: '0x002b36'
+#     foreground: '0x839496'
+#   normal:
+#     black:   '0x073642'
+#     green:   '0x859900'
+#     yellow:  '0xb58900'
+#     blue:    '0x268bd2'
+#     magenta: '0xd33682'
+#     cyan:    '0x2aa198'
+#     white:   '0xeee8d5'
+#   bright:
+#     black:   '0x002b36'
+#     green:   '0x586e75'
+#     yellow:  '0x657b83'
+#     blue:    '0x839496'
+#     magenta: '0x6c71c4'
+#     cyan:    '0x93a1a1'
+#     white:   '0xfdf6e3'
+# 39 (Solarized Light)
+# colors:
+#   primary:
+#     background: '0xfdf6e3'
+#     foreground: '0x586e75'
+#   normal:
+#     black:   '0x073642'
+#     green:   '0x859900'
+#     yellow:  '0xb58900'
+#     blue:    '0x268bd2'
+#     magenta: '0xd33682'
+#     cyan:    '0x2aa198'
+#     white:   '0xeee8d5'
+#   bright:
+#     black:   '0x002b36'
+#     green:   '0x586e75'
+#     yellow:  '0x657b83'
+#     blue:    '0x839496'
+#     magenta: '0x6c71c4'
+#     cyan:    '0x93a1a1'
+#     white:   '0xfdf6e3'
+# 40 (Taerminal)
+# colors:
+#   primary:
+#     background: '0x26282a'
+#     foreground: '0xf0f0f0'
+#   cursor:
+#     background: '0xf0f0f0'
+#     foreground: '0x26282a'
+#   normal:
+#     black:   '0x26282a'
+#     green:   '0xb4fb73'
+#     yellow:  '0xfffcb7'
+#     blue:    '0x8bbce5'
+#     magenta: '0xffb2fe'
+#     cyan:    '0xa2e1f8'
+#     white:   '0xf1f1f1'
+#   bright:
+#     black:   '0x6f6f6f'
+#     green:   '0xd6fcba'
+#     yellow:  '0xfffed5'
+#     blue:    '0xc2e3ff'
+#     magenta: '0xffc6ff'
+#     cyan:    '0xc0e9f8'
+#     white:   '0xffffff'
+# 41
+# colors:
+#   primary:
+#     background: '0x2e3436'
+#     foreground: '0xd3d7cf'
+#   normal:
+#     black: '0x2e3436'
+#     green: '0x4e9a06'
+#     yellow: '0xc4a000'
+#     blue: '0x3465a4'
+#     magenta: '0x75507b'
+#     cyan: '0x06989a'
+#     white: '0xd3d7cf'
+#   bright:
+#     black: '0x555753'
+#     green: '0x8ae234'
+#     yellow: '0xfce94f'
+#     blue: '0x729fcf'
+#     magenta: '0xad7fa8'
+#     cyan: '0x34e2e2'
+#     white: '0xeeeeec'
+# 42
+# colors:
+#   primary:
+#     background: '0x282828'
+#     foreground: '0xeeeeee'
+#   normal:
+#     black:   '0x282828'
+#     green:   '0xc9d05c'
+#     yellow:  '0xffc24b'
+#     blue:    '0xb3deef'
+#     magenta: '0xd3b987'
+#     cyan:    '0x73cef4'
+#     white:   '0xeeeeee'
+#   bright:
+#     black:   '0x4c4c4c'
+#     green:   '0xc9d05c'
+#     yellow:  '0xffc24b'
+#     blue:    '0xb3deef'
+#     magenta: '0xd3b987'
+#     cyan:    '0x73cef4'
+#     white:   '0xfeffff'
+# 43 (Terminal.app)
+# colors:
+#   primary:
+#     background: '0x000000'
+#     foreground: '0xb6b6b6'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x00a600'
+#     yellow:  '0x999900'
+#     blue:    '0x0000b2'
+#     magenta: '0xb200b2'
+#     cyan:    '0x00a6b2'
+#     white:   '0xbfbfbf'
+#   bright:
+#     black:   '0x666666'
+#     green:   '0x00d900'
+#     yellow:  '0xe5e500'
+#     blue:    '0x0000ff'
+#     magenta: '0xe500e5'
+#     cyan:    '0x00e5e5'
+#     white:   '0xe5e5e5'
+# 44
+# colors:
+#   primary:
+#     background: '0x1D1F28'
+#     foreground: '0xFDFDFD'
+#   normal:
+#     black:   '0x282A36'
+#     green:   '0x5ADECD'
+#     yellow:  '0xF2A272'
+#     blue:    '0x8897F4'
+#     magenta: '0xC574DD'
+#     cyan:    '0x79E6F3'
+#     white:   '0xFDFDFD'
+#   bright:
+#     black:   '0x414458'
+#     green:   '0x18E3C8'
+#     yellow:  '0xEBCB8B'
+#     blue:    '0xFF8037'
+#     magenta: '0x556FFF'
+#     cyan:    '0x3FDCEE'
+#     white:   '0xBEBEC1'
+#   indexed_colors: []
+# 45 (Tokyo Night: Storm variant)
+# colors:
+#   primary:
+#     background: '0x24283b'
+#     foreground: '0xa9b1d6'
+#   normal:
+#     black:   '0x32344a'
+#     green:   '0x9ece6a'
+#     yellow:  '0xe0af68'
+#     blue:    '0x7aa2f7'
+#     magenta: '0xad8ee6'
+#     cyan:    '0x449dab'
+#     white:   '0x9699a8'
+#   bright:
+#     black:   '0x444b6a'
+#     green:   '0xb9f27c'
+#     yellow:  '0xff9e64'
+#     blue:    '0x7da6ff'
+#     magenta: '0xbb9af7'
+#     cyan:    '0x0db9d7'
+#     white:   '0xacb0d0'
+# 46 (Tokyo Night)
+# colors:
+#   primary:
+#     background: '0x1a1b26'
+#     foreground: '0xa9b1d6'
+#   normal:
+#     black:   '0x32344a'
+#     green:   '0x9ece6a'
+#     yellow:  '0xe0af68'
+#     blue:    '0x7aa2f7'
+#     magenta: '0xad8ee6'
+#     cyan:    '0x449dab'
+#     white:   '0x787c99'
+#   bright:
+#     black:   '0x444b6a'
+#     green:   '0xb9f27c'
+#     yellow:  '0xff9e64'
+#     blue:    '0x7da6ff'
+#     magenta: '0xbb9af7'
+#     cyan:    '0x0db9d7'
+#     white:   '0xacb0d0'
+# 47 (Tomorrow Night)
+# colors:
+#   primary:
+#     background: '0x1d1f21'
+#     foreground: '0xc5c8c6'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0x1d1f21'
+#     cursor: '0xffffff'
+#   normal:
+#     black:   '0x1d1f21'
+#     green:   '0xb5bd68'
+#     yellow:  '0xe6c547'
+#     blue:    '0x81a2be'
+#     magenta: '0xb294bb'
+#     cyan:    '0x70c0ba'
+#     white:   '0x373b41'
+#   bright:
+#     black:   '0x666666'
+#     green:   '0x9ec400'
+#     yellow:  '0xf0c674'
+#     blue:    '0x81a2be'
+#     magenta: '0xb77ee0'
+#     cyan:    '0x54ced6'
+#     white:   '0x282a2e'
+# 48 (Tomorrow Night Bright)
+# colors:
+#   primary:
+#     background: '0x000000'
+#     foreground: '0xeaeaea'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0xb9ca4a'
+#     yellow:  '0xe6c547'
+#     blue:    '0x7aa6da'
+#     magenta: '0xc397d8'
+#     cyan:    '0x70c0ba'
+#     white:   '0x424242'
+#   bright:
+#     black:   '0x666666'
+#     green:   '0x9ec400'
+#     yellow:  '0xe7c547'
+#     blue:    '0x7aa6da'
+#     magenta: '0xb77ee0'
+#     cyan:    '0x54ced6'
+#     white:   '0x2a2a2a'
+# 49 (Wombat)
+# colors:
+#   primary:
+#     background: '0x1f1f1f'
+#     foreground: '0xe5e1d8'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0xbde97c'
+#     yellow:  '0xefdfac'
+#     blue:    '0x6ebaf8'
+#     magenta: '0xef88ff'
+#     cyan:    '0x90fdf8'
+#     white:   '0xe5e1d8'
+#   bright:
+#     black:   '0xb4b4b4'
+#     green:   '0xe3f7a1'
+#     yellow:  '0xf2e9bf'
+#     blue:    '0xb3d2ff'
+#     magenta: '0xe5bdff'
+#     cyan:    '0xc2fefa'
+#     white:   '0xffffff'
+# 50
+# colors:
+#   primary:
+#     background: '0x000000'
+#     foreground: '0xffffff'
+#   normal:
+#     black:   '0x000000'
+#     green:   '0x00cd00'
+#     yellow:  '0xcdcd00'
+#     blue:    '0x0000ee'
+#     magenta: '0xcd00cd'
+#     cyan:    '0x00cdcd'
+#     white:   '0xe5e5e5'
+#   bright:
+#     black:   '0x7f7f7f'
+#     green:   '0x00ff00'
+#     yellow:  '0xffff00'
+#     blue:    '0x5c5cff'
+#     magenta: '0xff00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xffffff'
+#ENDCOLORS
+
+# This selection of color combinations was compiled by ToggleCorp @
+# https://github.com/toggle-corp/alacritty-colorscheme
+#
+# I parsed the color codes from the themes directory with this commands
+# 
+# awk '/colors:|primary:|bright:|normal:|# Colors \(|cursor|text|background|foreground|black|green|yellow|blue|magenta|cyan|white/ {print "#", $0}' themes/* > output.txt
+# output.txt > xclip
+#
+# There were other color swaping programs, but a simple shell script will do the talk in less space than a whole python library... to verbose for my taste.
+#
+#
+#TODO   create a script to swap colors using their respective index
+
+
+
+
+
+
 
     background_opacity: 1.0
 

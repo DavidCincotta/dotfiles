@@ -1,19 +1,11 @@
-##start_i3
-
-#                  
-#      ..-'''-.     
-#  .--.\.-'''\ \    
-#  |__|       | |   
-#  .--.    __/ /    
-#  |  |   |_  '.    
-#  |  |      `.  \  
-#  |  |        \ '. 
-#  |  |         , | 
-#  |__|         | | 
-#              / ,' 
-#      -....--'  /  
-#      `.. __..-'   
-#
+#  _________ ______            _______         _______  _______  _______  _______            
+#  \__   __// ___  \ |\     /|(       )       (  ____ \(  ___  )(  ____ )(  ____ \           
+#     ) (   \/   \  \| )   ( || () () |       | (    \/| (   ) || (    )|| (    \/           
+#     | |      ___) /| | _ | || || || | _____ | |      | (___) || (____)|| (_____            
+#     | |     (___ ( | |( )| || |(_)| |(_____)| | ____ |  ___  ||  _____)(_____  )           
+#     | |         ) \| || || || |   | |       | | \_  )| (   ) || (            ) |           
+#  ___) (___/\___/  /| () () || )   ( |       | (___) || )   ( || )      /\____) |           
+#  \_______/\______/ (_______)|/     \|       (_______)|/     \||/       \_______)  
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -113,15 +105,15 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws1  "1-txt"
+set $ws2  "2-txt"
+set $ws3  "3-txt"
+set $ws4  "4-chrome"
+set $ws5  "5-spotify"
+set $ws6  "6-calibre"
+set $ws7  "7-dolphin"
+set $ws8  "8"
+set $ws9  "9"
 set $ws10 "10"
 
 # switch to workspace
@@ -210,8 +202,6 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 
 
-
-
 # class                 border  bground text    indicator child_border
 client.focused          #ffffff #500062 #afff9d #FFFF00   #FFFF00
 client.focused_inactive #ffffff #500062 #afff9d #500062   #500062
@@ -219,10 +209,19 @@ client.unfocused        #ffffff #500062 #afff9d #500062   #500062
 client.urgent           #500062 #500062 #afff9d #500062   #500062
 client.placeholder      #500062 #500062 #afff9d #500062   #500062
 
-client.background       #000000
+client.background       #FFFFFF
 
 gaps inner 15
 
 for_window [class="^.*"] border pixel 3
 
-##end_i3
+exec feh --bg-fill /home/david/Pictures/vaporwave.jpg
+
+#### assign workspaces
+assign [class="Google-chrome"] $ws4
+assign [class="calibre"] $ws6
+
+
+exec i3-msg 'workspace 4; exec google-chrome-stable;'
+exec i3-msg 'workspace 6; exec calibre'
+exec i3-msg 'workspace 5; exec spotify'
