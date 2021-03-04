@@ -1,12 +1,14 @@
-# _       _________          _______  _______                                              
-#( (    /|\__   __/|\     /|(  ___  )(  ____ \                                             
-#|  \  ( |   ) (   ( \   / )| (   ) || (    \/                                             
-#|   \ | |   | |    \ (_) / | |   | || (_____                                              
-#| (\ \) |   | |     ) _ (  | |   | |(_____  )                                             
-#| | \   |   | |    / ( ) \ | |   | |      ) |                                             
-#| )  \  |___) (___( /   \ )| (___) |/\____) |                                             
-#|/    )_)\_______/|/     \|(_______)\_______)  
 #
+#    ooooo      ooo  o8o                .oooooo.    .oooooo..o 
+#    `888b.     `8'  `"'               d8P'  `Y8b  d8P'    `Y8 
+#     8 `88b.    8  oooo  oooo    ooo 888      888 Y88bo.      
+#     8   `88b.  8  `888   `88b..8P'  888      888  `"Y8888o.  
+#     8     `88b.8   888     Y888'    888      888      `"Y88b 
+#     8       `888   888   .o8"'88b   `88b    d88' oo     .d8P 
+#    o8o        `8  o888o o88'   888o  `Y8bood8P'  8""88888P'  
+#                                                              
+#                                                              
+#                                                              
 # core GUI environment; strictly non-machine-specific things that do not work from a TTY.
 { config, lib, pkgs, ... }:
 let
@@ -51,56 +53,76 @@ in {
       pkgs.libreoffice
       pkgs.gnumeric
       #pkgs.wineStable
+      pkgs.zoom-us
+      pkgs.nerdfonts
     ];
-    etc."alacritty".text = builtins.readFile dotfiles.alacritty_config;
+    etc."alacritty".text = builtins.readFile "/etc/nixos/alacrittyconfig.dotfile";
     sessionVariables.TERMINAL = ["alacritty"];
     sessionVariables.TERM = ["alacritty"];
     sessionVariables.EDITOR = ["vim"];
   };
-  fonts.fonts = [
-    pkgs.hack-font
-  ];
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
-  location = {
-    #https://www.latlong.net/
-    latitude = 42.319519;
-    longitude = -72.629761;
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = [
+      pkgs.nerdfonts
+    ];
+    fontconfig = {
+      localConf = ''
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+
+<!-- Default font (no fc-match pattern) -->
+ <match>
+  <edit mode="prepend" name="family">
+   <string>Fixed</string>
+  </edit>
+ </match>
+
+<!-- Default sans-serif font -->
+ <match target="pattern">
+   <test qual="any" name="family"><string>sans-serif</string></test>
+   <!--<test qual="any" name="lang"><string>ja</string></test>-->
+   <edit name="family" mode="prepend" binding="same"><string>Fixed</string>  </edit>
+ </match>
+ 
+<!-- Default serif fonts -->
+ <match target="pattern">
+   <test qual="any" name="family"><string>serif</string></test>
+   <edit name="family" mode="prepend" binding="same"><string>Fixed</string>  </edit>
+ </match>
+
+<!-- Default monospace fonts -->
+ <match target="pattern">
+   <test qual="any" name="family"><string>monospace</string></test>
+   <edit name="family" mode="prepend" binding="same"><string>Fixed</string></edit>
+ </match>
+
+<!-- Fallback fonts preference order -->
+ <alias>
+  <family>sans-serif</family>
+  <prefer>
+   <family>Fixed</family>
+  </prefer>
+ </alias>
+ <alias>
+  <family>serif</family>
+  <prefer>
+   <family>Fixed</family>
+  </prefer>
+ </alias>
+ <alias>
+  <family>monospace</family>
+  <prefer>
+   <family>Fixed</family>
+  </prefer>
+ </alias>
+
+</fontconfig>
+      '';
+    };
   };
   programs.light.enable = true;
-  services = {
-    xserver = {
-      libinput.enable = true;
-      libinput.naturalScrolling = true;
-      autoRepeatDelay = 300;
-      autoRepeatInterval = 30;
-      desktopManager = {
-        plasma5 = {
-          enable = true;
-        };
-      };
-      displayManager = {
-          defaultSession = "plasma5+i3";
-      };
-      enable = true;
-      layout = "us";
-      autorun = true;
-      windowManager = {
-        i3 = {
-          enable = true;
-          package = pkgs.i3-gaps;
-          configFile = dotfiles.i3_config;
-          extraPackages = with pkgs; [
-            dmenu
-            i3lock
-          ];
-        };
-      };
-    };
-    blueman.enable = true;
-    picom.enable = true;
-  };
   security = {
     wrappers = {
       slock = {

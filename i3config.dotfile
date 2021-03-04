@@ -1,11 +1,14 @@
-#  _________ ______            _______         _______  _______  _______  _______            
-#  \__   __// ___  \ |\     /|(       )       (  ____ \(  ___  )(  ____ )(  ____ \           
-#     ) (   \/   \  \| )   ( || () () |       | (    \/| (   ) || (    )|| (    \/           
-#     | |      ___) /| | _ | || || || | _____ | |      | (___) || (____)|| (_____            
-#     | |     (___ ( | |( )| || |(_)| |(_____)| | ____ |  ___  ||  _____)(_____  )           
-#     | |         ) \| || || || |   | |       | | \_  )| (   ) || (            ) |           
-#  ___) (___/\___/  /| () () || )   ( |       | (___) || )   ( || )      /\____) |           
-#  \_______/\______/ (_______)|/     \|       (_______)|/     \||/       \_______)  
+#
+#     o8o    .oooo.                                                    
+#     `"'  .dP""Y88b                                                   
+#    oooo        ]8P'          .oooooooo  .oooo.   oo.ooooo.   .oooo.o 
+#    `888      <88b.          888' `88b  `P  )88b   888' `88b d88(  "8 
+#     888       `88b. 8888888 888   888   .oP"888   888   888 `"Y88b.  
+#     888  o.   .88P          `88bod8P'  d8(  888   888   888 o.  )88b 
+#    o888o `8bd88P'           `8oooooo.  `Y888""8o  888bod8P' 8""888P' 
+#                             d"     YD             888                
+#                             "Y88888P'            o888o               
+#                                                                      
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -13,7 +16,7 @@ set $mod mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack 6
+font Fixed 7
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -220,6 +223,7 @@ exec feh --bg-fill /home/david/Pictures/vaporwave.jpg
 #### assign workspaces
 assign [class="Google-chrome"] $ws4
 assign [class="calibre"] $ws6
+
 
 
 exec i3-msg 'workspace 4; exec google-chrome-stable;'

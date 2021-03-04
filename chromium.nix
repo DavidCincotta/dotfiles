@@ -1,14 +1,15 @@
-#   _       _________          _______  _______                                              
-#  ( (    /|\__   __/|\     /|(  ___  )(  ____ \                                             
-#  |  \  ( |   ) (   ( \   / )| (   ) || (    \/                                             
-#  |   \ | |   | |    \ (_) / | |   | || (_____                                              
-#  | (\ \) |   | |     ) _ (  | |   | |(_____  )                                             
-#  | | \   |   | |    / ( ) \ | |   | |      ) |                                             
-#  | )  \  |___) (___( /   \ )| (___) |/\____) |                                             
-#  |/    )_)\_______/|/     \|(_______)\_______)  
 #
+#    ooooo      ooo  o8o                .oooooo.    .oooooo..o 
+#    `888b.     `8'  `"'               d8P'  `Y8b  d8P'    `Y8 
+#     8 `88b.    8  oooo  oooo    ooo 888      888 Y88bo.      
+#     8   `88b.  8  `888   `88b..8P'  888      888  `"Y8888o.  
+#     8     `88b.8   888     Y888'    888      888      `"Y88b 
+#     8       `888   888   .o8"'88b   `88b    d88' oo     .d8P 
+#    o8o        `8  o888o o88'   888o  `Y8bood8P'  8""88888P'  
+#                                                              
+#                                                              
+#                                                              
 #custom chromium / gooogle_chrome_stable package settings
-
 { config, lib, pkgs, ... }:
 {
   programs.chromium = {
@@ -158,6 +159,7 @@
           { "url" = "https://discourse.nixos.org/"; name = "nixos-discourse"; }
           { "url" = "https://old.reddit.com/r/nixos/"; name = "nixos-reddit"; }
           { "url" = "https://nixos.wiki/"; name = "nixos-wiki"; }
+          { "url" = "https://nixos.wiki/wiki/Nix_Cookbook#Creating_Shell_Scripts"; name= "nixos-shell-scripts"; }       
         ]; }
         { "name" = "Elixir"; "children" = [
           { "url" = "https://elixir-lang.org/"; name = "elixir-lang"; }
@@ -232,6 +234,7 @@
           { "url" = "https://www.worksheetworks.com/english/writing/handwriting/cursive-practice.html"; name = "cursive-practice"; }
           { "url" = "https://libgen.is/"; name="libgen-free-books-by-isbn-is"; } 
           { "url" = "https://libgen.li/"; name="libgen-free-books-by-isbn-li"; } 
+          { "url" = "https://www.goodreads.com/"; name="goodreads"; }
         ];}
         { "name" = "ShortcutFoo"; "children" = [
           { "url" = "https://www.shortcutfoo.com/app/dojos/awk"; name = "awk-practice"; }
@@ -243,6 +246,9 @@
           { "url" = "https://www.rxlist.com/ativan-injection-drug.htm"; name = "ativan-injection-research"; }
           { "url" = "https://www.rxlist.com/atarax-drug.htm"; name = "atarax-research"; }
         ];}
+        { "name" = "Food"; "children" = [
+          { "url" = "https://therecipecritic.com/creamy-bacon-carbonara/"; name = "bacon-carbonara"; }
+      ];}
       ];
     };
   };

@@ -1,12 +1,14 @@
-#   _______  _        _        _______  _______  _______ ___________________________         
-#  (  ___  )( \      ( \      (  ___  )(  ____ \(  ____ )\__   __/\__   __/\__   __/|\     /|
-#  | (   ) || (      | (      | (   ) || (    \/| (    )|   ) (      ) (      ) (   ( \   / )
-#  | (___) || |      | |      | (___) || |      | (____)|   | |      | |      | |    \ (_) / 
-#  |  ___  || |      | |      |  ___  || |      |     __)   | |      | |      | |     \   /  
-#  | (   ) || |      | |      | (   ) || |      | (\ (      | |      | |      | |      ) (   
-#  | )   ( || (____/\| (____/\| )   ( || (____/\| ) \ \_____) (___   | |      | |      | |   
-#  |/     \|(_______/(_______/|/     \|(_______/|/   \__/\_______/   )_(      )_(      \_/   
-
+#
+#              oooo                                o8o      .       .               
+#              `888                                `"'    .o8     .o8               
+#     .oooo.    888   .oooo.    .ooooo.  oooo d8b oooo  .o888oo .o888oo oooo    ooo 
+#    `P  )88b   888  `P  )88b  d88' `"Y8 `888""8P `888    888     888    `88.  .8'  
+#     .oP"888   888   .oP"888  888        888      888    888     888     `88..8'   
+#    d8(  888   888  d8(  888  888   .o8  888      888    888 .   888 .    `888'    
+#    `Y888""8o o888o `Y888""8o `Y8bod8P' d888b    o888o   "888"   "888"     .8'     
+#                                                                       .o..P'      
+#                                                                       `Y8P'       
+#                                                                                   
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 env:
   TERM: xterm-256color
@@ -31,26 +33,28 @@ scrolling:
 
 font:
   normal:
-    family: Hack
+    family: Fixed
     style: Regular
 
   bold:
-    family: Hack
+    family: Fixed
     style: Bold
 
   italic:
-    family: Hack
+    family: Fixed 
     style: Italic
 
   bold_italic:
-    family: Hack
+    family: Fixed
     style: Bold Italic
 
-  size: 6.0
+  size: 7.0
 
   offset:
     x: 0
     y: 0
+
+draw_bold_text_with_bright_colors: true
 
 
 
@@ -1249,5 +1253,3 @@ key_bindings:
   - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
-
-##end_alacritty
