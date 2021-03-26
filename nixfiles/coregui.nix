@@ -13,8 +13,8 @@
 { config, lib, pkgs, ... }:
 let
   dotfiles = {
-    i3_config = "/etc/nixos/i3config.dotfile";
-    alacritty_config = "/etc/nixos/alacrittyconfig.dotfile";
+    i3_config = "/etc/nixos/dotfiles/i3config.dotfile";
+    alacritty_config = "/etc/nixos/dotfiles/alacrittyconfig.dotfile";
   };
 in {
   imports = [
@@ -55,11 +55,11 @@ in {
       #pkgs.wineStable
       pkgs.zoom-us
       pkgs.nerdfonts
+      pkgs.skype
     ];
-    etc."alacritty".text = builtins.readFile "/etc/nixos/alacrittyconfig.dotfile";
+    etc."alacritty".text = builtins.readFile dotfiles.alacritty_config;
     sessionVariables.TERMINAL = ["alacritty"];
     sessionVariables.TERM = ["alacritty"];
-    sessionVariables.EDITOR = ["vim"];
   };
   fonts = {
     enableDefaultFonts = true;

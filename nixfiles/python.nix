@@ -9,7 +9,7 @@
 #
 #
 #
-#custom python package implementation with custom ENV variables
+# Not used
 with import <nixpkgs> {};
 
 buildPythonPackage {

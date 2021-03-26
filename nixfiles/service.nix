@@ -49,7 +49,7 @@
         i3 = {
           enable = true;
           package = pkgs.i3-gaps;
-          configFile = "/etc/nixos/i3config.dotfile";
+          configFile = "/etc/nixos/dotfiles/i3config.dotfile";
           extraPackages = with pkgs; [
             dmenu
             i3lock

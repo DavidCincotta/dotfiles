@@ -1,0 +1,56 @@
+#
+#    ooooooooo.                   .   oooo                                .oooo.   
+#    `888   `Y88.               .o8   `888                              .dP""Y88b  
+#     888   .d88' oooo    ooo .o888oo  888 .oo.    .ooooo.  ooo. .oo.         ]8P' 
+#     888ooo88P'   `88.  .8'    888    888P"Y88b  d88' `88b `888P"Y88b      <88b.  
+#     888           `88..8'     888    888   888  888   888  888   888       `88b. 
+#     888            `888'      888 .  888   888  888   888  888   888  o.   .88P  
+#    o888o            .8'       "888" o888o o888o `Y8bod8P' o888o o888o `8bd88P'   
+#                 .o..P'                                                           
+#                 `Y8P'                                                            
+# change the active color scheme for alacritty terminal in the /etc/nixos/ folder 
+                                                                                 
+import sys
+
+configfile = open("/etc/nixos/alacrittyconfig.dotfile", "r")
+configstring = configfile.read()
+
+
+
+colorfile = open("/etc/nixos/alacrittycolors.dotfile", "r")
+colors = colorfile.read()
+colorindex = int(sys.argv[1])
+
+
+current_color_config = (configstring.split("#STARTCOLORS")[1].split("#ENDCOLORS")[0])
+
+
+config = list()
+index = 0
+count = 0
+start = 0
+end = 0
+split_colors = colors.split("\n")
+
+
+
+for i in split_colors:
+	if i[0:8] == "# Colors":
+		end = index
+		config.append(split_colors[start:end])
+		start = index
+		count+=1
+	index+=1
+
+
+new_color_config = "\n".join(config[colorindex])
+
+print(new_color_config)
+
+newfile = configstring.replace(current_color_config, new_color_config)
+
+
+
+configfile = open("/etc/nixos/alacrittyconfig.dotfile","w")
+configfile.write(newfile)
+configfile.close()

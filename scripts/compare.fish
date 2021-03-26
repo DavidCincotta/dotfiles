@@ -21,8 +21,8 @@
 #                                               
 # computes the difference in files between the git repository and the /etc/ files that produce the system. 
 
-ls -l /etc/nixos/ 				| grep -Po '(\d\d\:\d\d)(.)*((\.nix)|(\.dotfile)|(\.shell|\.fish)|(\.cfg))' | grep -Po '(\S)*$'  > p1
-ls -l /etc/nixos/NixOSCompleteConfig	 	| grep -Po '(\d\d\:\d\d)(.)*((\.nix)|(\.dotfile)|(\.shell|\.fish)|(\.cfg))' | grep -Po '(\S)*$'  > p2
+ls -l /etc/nixos/ 				| grep -Po '(\d\d\:\d\d)(.)*((\.nix)|(\.dotfile)|(\.shell|(\.python.?)|\.fish)|(\.cfg))' | grep -Po '(\S)*$'  > p1
+ls -l /etc/nixos/NixOSCompleteConfig	 	| grep -Po '(\d\d\:\d\d)(.)*((\.nix)|(\.dotfile)|(\.shell|(\.python.?)|\.fish)|(\.cfg))' | grep -Po '(\S)*$'  > p2
 diff p1 p2 | grep -Po '(\s)(\S)*' | grep -Po '(\S)*' > p3
 cat p3
 

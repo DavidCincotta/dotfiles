@@ -245,6 +245,7 @@
           { "url" = "https://www.rxlist.com/ativan-drug.htm"; name = "ativan-research"; }
           { "url" = "https://www.rxlist.com/ativan-injection-drug.htm"; name = "ativan-injection-research"; }
           { "url" = "https://www.rxlist.com/atarax-drug.htm"; name = "atarax-research"; }
+          { "url" = "https://orthosports.com.au/pdf-download/Understanding-tendon-rehabilitation-Paul-Mason.pdf"; name = "tendon-recovery-research"; }
         ];}
         { "name" = "Food"; "children" = [
           { "url" = "https://therecipecritic.com/creamy-bacon-carbonara/"; name = "bacon-carbonara"; }

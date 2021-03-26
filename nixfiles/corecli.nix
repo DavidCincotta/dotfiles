@@ -13,7 +13,7 @@
 { config, lib, pkgs, ... }:
 let
   dotfiles = {
-    gitconfig = builtins.readFile /etc/nixos/gitconfig;
+    gitconfig = builtins.readFile /etc/nixos/secrets/gitconfig;
   };
   my-python-packages = python-packages: with python-packages; [
     pandas
@@ -65,7 +65,7 @@ in {
       pkgs.tldr
       pkgs.tmux
       pkgs.tree #               see tree structure of the filesystem
-      pkgs.vim_configurable #   vim that uses plugins
+      #pkgs.vim_configurable #   vim that uses plugins
       pkgs.wpa_supplicant
       pkgs.xclip #              send cli output to the clipboard or the reverse
       pkgs.zip #                standard library for ziping directories
@@ -96,6 +96,13 @@ in {
       pkgs.jp2a   #             jpg to ascii art
       pkgs.toilet #             ascii in colorful letters
       python-with-my-packages # custom python3 instalation
+      pkgs.gltron #             tron inspired snake
+      pkgs.vitetris #           terminal tetris
+      pkgs.nottetris2 #         physics based tetris successor
+      pkgs.tty-solitaire #      terminal solitaire
+      pkgs.graphviz
+      pkgs.bat
+      pkgs.fzf
     ];
     etc."gitconfig".text = dotfiles.gitconfig;
   };
