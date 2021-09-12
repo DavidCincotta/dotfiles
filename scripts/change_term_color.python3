@@ -12,12 +12,12 @@
                                                                                  
 import sys
 
-configfile = open("/etc/nixos/alacrittyconfig.dotfile", "r")
+configfile = open("/etc/nixos/dotfiles/alacrittyconfig.dotfile", "r")
 configstring = configfile.read()
 
 
 
-colorfile = open("/etc/nixos/alacrittycolors.dotfile", "r")
+colorfile = open("/etc/nixos/dotfiles/alacrittycolors.dotfile", "r")
 colors = colorfile.read()
 colorindex = int(sys.argv[1])
 
@@ -51,6 +51,6 @@ newfile = configstring.replace(current_color_config, new_color_config)
 
 
 
-configfile = open("/etc/nixos/alacrittyconfig.dotfile","w")
+configfile = open("/etc/nixos/dotfiles/alacrittyconfig.dotfile","w")
 configfile.write(newfile)
 configfile.close()

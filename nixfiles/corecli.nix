@@ -103,6 +103,9 @@ in {
       pkgs.graphviz
       pkgs.bat
       pkgs.fzf
+      pkgs.maven
+      pkgs.nodejs
+      pkgs.dbus
     ];
     etc."gitconfig".text = dotfiles.gitconfig;
   };

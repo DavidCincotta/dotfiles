@@ -22,12 +22,12 @@
       extraOptions = ["ignore-scrolling"];
     };
     logind = {
-      lidSwitch = "lock";
       extraConfig = "
-        IdleAction=poweroff;
-        IdleActionSec=15min;
-        HandlePowerKey=suspend;
-      ";
+        HandleLidSwitch=ignore
+        HandleLidSwitchDocked=ignore
+        HandleLidSwitchExternalPower=ignore
+        ";
+      #killUserProcesses = true;
     };
     xserver = {
       libinput.enable = true;
@@ -36,11 +36,12 @@
       autoRepeatInterval = 30;
       desktopManager = {
         plasma5 = {
-          enable = true;
+          enable = false;
         };
       };
       displayManager = {
-          defaultSession = "plasma5+i3";
+        defaultSession = "none+i3";
+          #defaultSession = "none+i3";
       };
       enable = true;
       layout = "us";
@@ -53,6 +54,7 @@
           extraPackages = with pkgs; [
             dmenu
             i3lock
+            i3status
           ];
         };
       };

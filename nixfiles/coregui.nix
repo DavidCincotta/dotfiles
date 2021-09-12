@@ -56,6 +56,10 @@ in {
       pkgs.zoom-us
       pkgs.nerdfonts
       pkgs.skype
+      pkgs.polybar
+      pkgs.slack-term
+      pkgs.wireshark
+      pkgs.wireshark-cli
     ];
     etc."alacritty".text = builtins.readFile dotfiles.alacritty_config;
     sessionVariables.TERMINAL = ["alacritty"];

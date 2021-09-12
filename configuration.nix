@@ -19,31 +19,14 @@
       ./nixfiles/corecli.nix
       ./nixfiles/service.nix
       ./nixfiles/vim.nix
+      ./nixfiles/networking.nix
     ];
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    extraModulePackages = [
-      config.boot.kernelPackages.rtl8821ce
-      #config.boot.kernelPackages.rtlwifi_new
-    ];
-
-    # config.boot.kernelPackages.rtl8821ce
-    # config.boot.kernelPackages.rtlwifi_new 
-    # config.boot.kernelPackages.nvidia_x11
-
-    # all realtek drivers can be found by searching linuxPackages.rtl on the nixos package search website
-  };
-  networking = {
-    hostName = "nixos";
-    wireless.enable = false; # handled by network manager, wifi didn't work on true;
-    networkmanager.enable = true;
-    useDHCP = false;
-    #interfaces.enp0s21f0u1.useDHCP = false; # for ethernet usage through USB ports
-    #interfaces.enp0s21f0u2.useDHCP = true; 
-    #interfaces.enp0s21f0u3.useDHCP = false;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
   sound.enable = true;
   hardware = {
@@ -58,6 +41,10 @@
     #https://www.latlong.net/
     latitude = 42.319519;
     longitude = -72.629761;
+  };
+  powerManagement = {
+    enable = true;
+    powerDownCommands = "poweroff;";
   };
   users = {
     mutableUsers = true;
@@ -95,16 +82,11 @@
         alias lynx="lynx -cfg=/etc/nixos/dotfiles/lynx.cfg";
         alias figlet="figlet -d /home/david/Documents/asciiart/figlet-fonts/";
         alias m="more";
-        xinput disable 12;
-        xinput disable 11;
+        #xinput disable 12;
+        #xinput disable 11;
         '';
+       
     };
-  };
-  powerManagement = {
-    enable = true;
-    powerUpCommands =  "xinput disable 12; xinput disable 11;";
-    powerDownCommands =   "";
-    cpuFreqGovernor = "powersave"; # "ondemand", "powersave", performance
   };
   system.stateVersion = "20.09";
 }

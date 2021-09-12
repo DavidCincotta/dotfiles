@@ -27,7 +27,7 @@
       "cmedhionkhpnakcndndgjdbohmhepckk"    # 10  Addblock for Youtube, double duty on the youtube adds usually works.
       "hpbmedimnlknflpbgfbllklgelbnelef"    # 11  Time tags youtube Really good for sharing information through video
       "noondiphcddnnabmjcihcjfbhfklnnep"    # 12  password alert. Protect your google password
-      "aapbdbdomjkkjkaonfhkkikfgjllcleb"    # 13  Google translate. Expand your knowledge by seeing more of the interneti
+      #"aapbdbdomjkkjkaonfhkkikfgjllcleb"    # 13  Google translate. Expand your knowledge by seeing more of the interneti
       "nnckehldicaciogcbchegobnafnjkcne"    # 14  Google Tone. Very cool extension that I want to see used.
       "gmbmikajjgmnabiglmofipeabaddhgne"    # 15  Save to Google Drive. I have a Google 1 subscription, 1$/month. Use the space.
       #"efinmbicabejjhjafeidhfbojhnfiepj"    # 16  Report Webspam with this extension by google
@@ -65,6 +65,7 @@
       #"hmanckoiohnlgdommlcckcflkmllobgj"   # 48  Ink for google, interesting webpage alterations for core google services
       #"pdiebiamhaleloakpcgmpnenggpjbcbm"   # 49  Tab Snooze, interesting tab reloading features, might be helpful as a reminder for some 
       #"hdokiejnpimakedhajhdlcegeplioahd"   # 50  LastPass  #I prefer to use google password services
+      "chphlpgkkbolifaimnlloiipkdnihall"    # 51  Onetab  saves tabs in the "onetab" reduces chromium memory consumption
     ];
     extraOpts = let
     in {

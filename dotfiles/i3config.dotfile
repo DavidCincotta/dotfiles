@@ -179,9 +179,11 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-#}
+bar {
+        status_command i3status --config /etc/nixos/dotfiles/i3status.dotfile
+	position top
+	tray_output primary
+}
 
 # Plasma compatibility improvements
 # gift from alex
@@ -222,8 +224,5 @@ exec feh --bg-fill /home/david/Pictures/vaporwave.jpg
 
 #### assign workspaces
 assign [class="Google-chrome"] $ws4
-assign [class="calibre"] $ws6
 
-exec i3-msg 'workspace 4; exec google-chrome-stable https://calendar.google.com/calendar/u/0/r https://messages.google.com/web/conversations https://www.messenger.com/t/100005138496698 https://mail.google.com/mail/u/0/;'
-exec i3-msg 'workspace 6; exec calibre'
-exec 13-msg 'workspace 5; exec spotify'
+exec i3-msg 'workspace 4; exec google-chrome-stable'
