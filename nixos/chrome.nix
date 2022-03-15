@@ -1,0 +1,1 @@
+/etc/nixos/chrome.nix
