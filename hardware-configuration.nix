@@ -19,7 +19,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/AA43-0822";
+    { device = "/dev/disk/by-uuid/4175-7C13";
       fsType = "vfat";
     };
 
@@ -27,5 +27,13 @@
     [ { device = "/dev/disk/by-uuid/69c6d295-a67e-4386-ae2d-e01e5c5e6e26"; }
     ];
 
+  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+  # Per-interface useDHCP will be mandatory in the future, so this generated config
+  # replicates the default behaviour.
+  networking.useDHCP = lib.mkDefault false;
+  networking.interfaces.vboxnet0.useDHCP = lib.mkDefault true;
+  networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -11,37 +11,54 @@
 #                                                              
 # main config file
 { config, lib, pkgs, ... }:
+let
+  file = {
+    alacritty_config = "/etc/nixos/alacritty.cfg";
+    i3_config = "/etc/nixos/i3.cfg";
+    gitconfig = builtins.readFile /etc/nixos/secrets/gitconfig;
+  };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nixfiles/coregui.nix
-      ./nixfiles/corecli.nix
-      ./nixfiles/service.nix
-      ./nixfiles/vim.nix
-      ./nixfiles/networking.nix
-    ];
+      ./python3.nix
+      ./fonts.nix
+      ./fish.nix
+      ./chrome.nix
+      ./packages.nix
+      ./nix-alien.nix
+      ./vscode.nix
+      ./systemd.nix
+      ./FetchFromGit.nix
+  ];
+  system.stateVersion = "22.05";
+  system.nixos.label = "A.C.";
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      grub = {
+        devices = [ "nodev" ];
+        enable = false;
+        efiSupport = true;
+        version = 2;
+        useOSProber = true;
+      };
     };
     kernelPackages = pkgs.linuxPackages_latest;
   };
   sound.enable = true;
+  sound.mediaKeys.enable=true;
   hardware = {
     pulseaudio = {
       enable = true;
       package = pkgs.pulseaudioFull;
+      support32Bit = true;
     };
     bluetooth.enable = true;
   };
   time.timeZone = "America/New_York";
-  location = {
-    #https://www.latlong.net/
-    latitude = 42.319519;
-    longitude = -72.629761;
-  };
   powerManagement = {
     enable = true;
     powerDownCommands = "poweroff;";
@@ -52,41 +69,80 @@
       david = {
         isNormalUser = true;
         password = "";
-        extraGroups = ["wheel" "networkmanager"];
+        extraGroups = ["wheel" "networkmanager" "pulse" "audio" "sound"];
       };
     };
-    extraUsers.david.shell = pkgs.fish;
-    };
+    extraGroups.vboxusers.members=["david"];
+  };
   security.sudo.wheelNeedsPassword = false;
-  nixpkgs.config.allowUnfree = true;
-  programs = {
-    fish = {
-      enable = true;
-      interactiveShellInit = ''
-        alias gs="git status";
-        alias e="vim -n";
-        alias s="sudo";
-        alias se="sudo vim -n";
-        alias l="lsd -liA --total-size --group-dirs last";
-        alias ls="lsd";
-        alias g="grep -P";
-        alias ontouchpad="xinput enable 11";
-	alias offtouchpad="xinput disable 11";
-        alias rebuild="sudo nixos-rebuild switch";
-        alias ctrlc="xclip -selection c";
-        alias ctrlv="xclip -selection c -o";
-	alias gpom="git push -u origin master";
-	alias gs="git status";
-	alias f="fish";
-        alias sf="sudo fish";
-        alias lynx="lynx -cfg=/etc/nixos/dotfiles/lynx.cfg";
-        alias figlet="figlet -d /home/david/Documents/asciiart/figlet-fonts/";
-        alias m="more";
-        #xinput disable 12;
-        #xinput disable 11;
-        '';
-       
+  virtualisation.virtualbox.host.enable = true;
+  security = {
+    wrappers = { 
+      ubridge= {
+        owner = "root";
+        group = "root";
+        source = "${pkgs.ubridge.out}/bin/ubridge";
+        capabilities = "cap_net_admin+eip cap_net_raw+eip cap_net_broadcast+eip cap_net_bind_service+eip";
+      };
     };
   };
-  system.stateVersion = "20.09";
+  networking = {
+    hostName = "nixos";
+    #wireless.enable = true;#Handled by NM better 
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
+    useDHCP = false;
+    useNetworkd = false;
+  };
+  services = {
+    openssh = {
+      enable = true;
+    };
+    unclutter-xfixes = {
+      enable = true;
+      extraOptions = ["ignore-scrolling"];
+    };
+    logind = {
+      extraConfig = "
+        HandleLidSwitch=ignore
+        HandleLidSwitchDocked=ignore
+        HandleLidSwitchExternalPower=ignore
+      ";
+    };
+    xserver = {
+      libinput.enable = true;
+      libinput.touchpad.naturalScrolling = true;
+      autoRepeatDelay = 300;
+      autoRepeatInterval = 30;
+      desktopManager = {
+        plasma5 = {
+          enable = false;
+        };
+      };
+      displayManager = {
+        defaultSession = "none+i3";
+          autoLogin={
+            enable=true;
+            user="david";
+        };
+      };
+      enable = true;
+      layout = "us";
+      #autorun = true;
+      windowManager = {
+        i3 = {
+          enable = true;
+          package = pkgs.i3-gaps;
+          configFile = file.i3_config;
+          extraPackages = with pkgs; [
+            dmenu
+            i3lock
+            i3status
+          ];
+        };
+      };
+    };
+  };
 }
