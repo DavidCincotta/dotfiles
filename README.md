@@ -1,20 +1,14 @@
-# NixOSCompleteConfig
+#NixOS
+###declarative system configuration
+The repository underwent a major refactoring after some unexpected problems cropped up.
+To make new additions and debugging easier I have better parametized into modules.
 
-This is an ongoing project to create a easily deployable and configurable Nixos Installation.
+The file recovery.nix is to be renamed to 'configuration.nix' in case of a catastrophic system
+failure; it is a minimum installation that has successfully booted logged in after a crash. 
 
-The goal of this is mainly to teach myself system basics that are not taught in university.
-For example, I repartitioned some old flash drives using fdisk, created some miscilanious
-scripts, learned the usefullness of scripting, really the lessons are endless. 
+The source of that failure is what I am currently working on. For some reason my nix-profile
+'is not a symlink'. This generally means that my nix-environment is not being tracked properly.
+This results in not being able to rollback, selelct generations from boot, and use a variety of
+nix commands. 
 
-I will continue to update and show the progress with this operating system, as it is my daily
-driver. 
-
-
-
-Some things I want to accomplish in the future:
-
-	Easy installation scripts:
-		network drivers
-		change file destinations
-
-
+Rebuild still works. Ultimately I think a full reinstall is necessary.
