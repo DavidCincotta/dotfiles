@@ -12,3 +12,5 @@ This results in not being able to rollback, selelct generations from boot, and u
 nix commands. 
 
 Rebuild still works. Ultimately I think a full reinstall is necessary.
+
+test ssh
